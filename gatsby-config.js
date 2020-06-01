@@ -1,10 +1,17 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Default Starter`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
+    title: `Vidi Programming Language`,
+    description: `Start coding using the Vidi programming language, a simple language with a simple syntax that is growing all the time.`,
+    author: `Samuel Howard`, 
   },
-  plugins: [
+    plugins: [
+	{
+	    resolve: `gatsby-source-filesystem`,
+	    options: {
+		name: `src`,
+		path: `${__dirname}/src/`,
+	    },
+	},
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-source-filesystem`,
@@ -13,18 +20,32 @@ module.exports = {
         path: `${__dirname}/src/images`,
       },
     },
-    `gatsby-transformer-sharp`,
-    `gatsby-plugin-sharp`,
+      `gatsby-transformer-sharp`,
+      `gatsby-transformer-remark`,
+	`gatsby-plugin-sharp`,
+	{
+	    resolve: `gatsby-transformer-remark`,
+	    options: {
+		plugins: [
+		    {
+			resolve: `gatsby-remark-images`,
+			options: {
+			    maxWidth: 800,
+			},
+		    },
+		],
+	    },
+	},
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `gatsby-starter-default`,
-        short_name: `starter`,
+        name: `vidi-lang`,
+        short_name: `vidi`,
         start_url: `/`,
-        background_color: `#663399`,
-        theme_color: `#663399`,
+        background_color: `#46b4eb`,
+        theme_color: `#46b4eb`,
         display: `minimal-ui`,
-        icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
+        icon: `src/images/vidi-icon.png`, // This path is relative to the root of the site.
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality

@@ -1,11 +1,22 @@
 import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import React from "react"
+import VidiLogo from "../images/vidi-icon.png"
+
+const HeaderLink = props => (
+	<li style={{ display: `inline-block`, marginBottom: `0rem`, marginRight: `1rem` }}>
+	<Link to={props.to}>{props.children}</Link>
+	</li>
+) 
+
+const HeaderImage = props => (
+	<img src={props.source} alt="" style={{ width: `70px`, float: `left`, display: `inline-block`, marginBottom: `1.45rem`, marginRight: `1rem` }}/>
+) 
 
 const Header = ({ siteTitle }) => (
   <header
     style={{
-      background: `rebeccapurple`,
+      background: '#46b4eb',
       marginBottom: `1.45rem`,
     }}
   >
@@ -15,8 +26,9 @@ const Header = ({ siteTitle }) => (
         maxWidth: 960,
         padding: `1.45rem 1.0875rem`,
       }}
-    >
-      <h1 style={{ margin: 0 }}>
+	>
+	<HeaderImage source={VidiLogo}/>
+      <h1 style={{ margin: 10 }}>
         <Link
           to="/"
           style={{
@@ -26,7 +38,12 @@ const Header = ({ siteTitle }) => (
         >
           {siteTitle}
         </Link>
-      </h1>
+	</h1>
+	<ul style={{ listStyle: `none`, float: `right` }}>
+	<HeaderLink to="/">Home</HeaderLink>
+	<HeaderLink to="/docs">Docs</HeaderLink>
+	<HeaderLink to="/samples">Samples</HeaderLink>
+	</ul>
     </div>
   </header>
 )

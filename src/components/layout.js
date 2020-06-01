@@ -33,11 +33,14 @@ const Layout = ({ children }) => {
           padding: `0 1.0875rem 1.45rem`,
         }}
       >
-        <main>{children}</main>
-        <footer>
-          © {new Date().getFullYear()}, Built with
+          <main>{children}</main>
+          <footer>
+          © {new Date().getFullYear()}, Language and site built by
           {` `}
-          <a href="https://www.gatsbyjs.org">Gatsby</a>
+          <a style={{ color: `#46b4eb` }} href="https://github.com/SamuelHoward">Samuel Howard</a>
+          , site built with
+          {` `}
+          <a style={{ color: `#46b4eb` }} href="https://www.gatsbyjs.org">Gatsby</a>
         </footer>
       </div>
     </>

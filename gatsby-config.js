@@ -1,4 +1,5 @@
 module.exports = {
+    pathPrefix: "/vidi-site",
   siteMetadata: {
     title: `Vidi Programming Language`,
     description: `Start coding using the Vidi programming language, a simple language with a simple syntax that is growing all the time.`,

@@ -17,7 +17,14 @@ const IndexPage = () => (
 	</p>
     <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
 	</div>
-	<h2>Current state of Vidi</h2>
+	<h2>Download Vidi</h2>
+	<p>
+	You can get the Vidi interpreter
+    {` `}
+	<a style={{ color: `#46b4eb` }} href="https://github.com/SamuelHoward/vidi-lang">here through Github</a>.
+	You can use Github to contribute to the language as well, although contribution guidelines have not been created yet.
+	</p>
+    	<h2>Current state of Vidi</h2>
 	<p>
 	The current version of Vidi is evaluated using an interpreter built in C++. Previously, it was developed using OCaml. It is being solely developed by
     {` `}
